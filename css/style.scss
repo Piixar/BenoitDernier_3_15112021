@@ -215,8 +215,33 @@ header {
         padding-right: 15px;
         text-decoration: none;
         font-size: 24px;
-    }
 
+        .fas {
+            opacity: 0;
+        }
+
+        .far {
+            opacity: 1;
+        }
+
+        &:hover {
+
+            .fas {
+                opacity: 1;
+                transform-origin: bottom center;
+                color: $couleur-primaire;
+                transition: color 500ms ease-in;
+                /*#9356dc*/
+            }
+
+            .far {
+                opacity: 0;
+            }
+
+            /* pour activer si cursonr passe par dessus*/
+
+        }
+    }
 
 }
 
@@ -280,15 +305,13 @@ footer {
 }
 
 
-.bloc {
+#menu {
     padding: 0 20px;
     width: 100%;
     max-width: 1200px;
     border-radius: 30px 30px 0 0;
     background-color: #F6F6F6;
     box-sizing: border-box;
-
-
 
     .menu-title {
         display: flex;
@@ -297,15 +320,20 @@ footer {
         font-family: 'Shrikhand';
     }
 
-    .menu{
+    .menu {
         display: flex;
-        gap:2%;
-        flex-wrap: wrap;
+        gap: 2%;
+
+        @for $i from 1 through 99 {
+            .item:nth-child(#{$i}) {
+                animation-delay: $i * 500ms;
+            }
+        }
 
     }
-    .box{
 
-        width:32%;
+    // .box div description plats
+    .box {
 
         h3 {
             position: relative;
@@ -317,87 +345,90 @@ footer {
                 content: '';
                 width: 50px;
                 height: 4px;
-                background:$couleur-tertiare;
+                background: $couleur-tertiare;
                 position: absolute;
                 z-index: 20;
                 left: 0px;
                 bottom: -8px;
             }
         }
-    }
 
-    .item{
-        margin-bottom:20px;
-        width:100%;
-    }
+        .item {
+            margin-bottom: 20px;
+            width: 100%;
+            opacity: 0;
+            animation: opacity 2s;
+            animation-fill-mode: forwards;
+            animation-delay: 1000ms;
+        }
 
-    .anim-price {
-        position: relative;
-        cursor: pointer;
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 70px;
-        border-radius: 15px;
-        background-color: white ;
-        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
+        // Animation prix + icone dans .box
+        .anim-price {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
 
-        .valid-box {
-            display: none;
-            position: absolute;
-            background: $couleur-tertiare;
-            border-radius: 0 15px 15px 0;
-            right: 0px;
-            padding: 0 13px;
-            height: 100%;
-            i {
-                font-size: 30px;
-                color: white;
-                transform: rotate(180deg);
-                animation: rotate 0.5s both;
+            .valid-box {
+                display: none;
+                position: absolute;
+                background: $couleur-tertiare;
+                border-radius: 0 15px 15px 0;
+                right: 0px;
+                padding: 0 13px;
+                height: 100%;
+
+                i {
+                    font-size: 30px;
+                    color: white;
+                    transform: rotate(180deg);
+                    animation: rotate 0.5s both;
+                }
+            }
+
+            &:hover .valid-box {
+                @include flexCenter;
+                animation: slide-left 0.5s ease;
+                transform-origin: right;
+            }
+
+            &:hover .price {
+                padding-right: 50px;
+                transition: 0.5s ease;
             }
         }
-       
-        &:hover .valid-box{
-            @include flexCenter;
-            animation: slide-left 0.5s ease ;
-            transform-origin: right;
-        }
-        &:hover .price {
-            padding-right: 50px;
-            transition: 0.5s ease ;
-        }
-    }
 
-
-
-    .description {
-        margin-left: 20px;
-        white-space: nowrap;
-        overflow: hidden;
-
-        h4,
-        p {
-            margin: 0;
-            text-overflow: ellipsis;
+        // Texte dans .box
+        .description {
+            margin-left: 20px;
+            white-space: nowrap;
             overflow: hidden;
+
+            h4,
+            p {
+                margin: 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
         }
 
+        .price p {
+            padding-right: 20px;
+            font-weight: bold;
+        }
     }
 
-    .price p{
-        padding-right:20px;
-        font-weight:bold;
-    }
-
+    // Fin .box
 
 }
-
-
-
-
 
 
 @keyframes rotate {
@@ -413,21 +444,23 @@ footer {
 
 @keyframes slide-left {
     0% {
-              transform: scaleX(0);
+        transform: scaleX(0);
     }
-    100% {
-              transform: scaleX(-50px);
-    }
-  }
 
-  @keyframes opacity {
-    0% {
-              opacity: 0;
-    }
     100% {
-              opacity: 1;
+        transform: scaleX(-50px);
     }
-  }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 /* media queries */
 
