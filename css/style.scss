@@ -1,5 +1,5 @@
 /* Font Family */
-@font-face{
+@font-face {
     font-family: 'shrikhand';
     src: url('../fonts/Shrikhand/Shrikhand-Regular.ttf') format('truetype');
     font-weight: bold;
@@ -11,20 +11,20 @@
     font-weight: 100;
 }
 
-@font-face{
+@font-face {
     font-family: 'roboto';
     src: url('../fonts/Roboto/Roboto-Regular.ttf');
     font-weight: 400;
 }
 
-@font-face{
+@font-face {
     font-family: 'roboto';
     src: url('../fonts/Roboto/Roboto-Italic.ttf');
     font-weight: 400;
     font-style: italic;
 }
 
-@font-face{
+@font-face {
     font-family: 'roboto';
     src: url('../fonts/Roboto/Roboto-Bold.ttf');
     font-weight: bold;
@@ -34,6 +34,7 @@
 $couleur-primaire:#9356DC;
 $couleur-secondaire:#FF79DA;
 $couleur-tertiare:#99E2D0;
+$gradient:linear-gradient(#FF79DA, #9356DC);
 
 /* variables images */
 $img-menu1:url("../images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
@@ -59,6 +60,11 @@ $img-menu4:url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
 
 /* ========== */
 
+/* spinner */
+
+
+
+
 /* header */
 
 body {
@@ -74,6 +80,12 @@ body {
     padding: 0 15px;
 }
 
+a {
+    color: #000;
+    /* normal */
+    text-decoration: none;
+}
+
 header {
 
     .logo {
@@ -82,8 +94,9 @@ header {
         font-weight: bold;
         font-size: 24px;
         border-bottom: solid 2px #f2f2f2;
-        
-        h1{
+
+
+        h1 {
             margin-bottom: 0;
         }
     }
@@ -109,7 +122,7 @@ header {
         background: linear-gradient($couleur-secondaire, $couleur-primaire);
         color: #ffffff;
         padding: 20px;
-        border-radius: 15px;
+        border-radius: 40px;
         font-weight: bold;
     }
 }
@@ -118,6 +131,7 @@ header {
 
 .nav {
     height: 70px;
+
     ol {
         display: flex;
         list-style: none;
@@ -181,38 +195,38 @@ header {
         background-image: $img-menu4;
     }
 
-    .description{
+    .description {
         display: flex;
         justify-content: space-between;
         padding-left: 15px;
 
-        h4{
+        h4 {
             margin-bottom: 10px;
         }
-        p{
+
+        p {
             margin-top: 5px;
         }
     }
 
-    .heart{
+    .heart {
         display: flex;
         align-items: center;
-        padding-right:15px;
-
-        i{
-            font-size: 26px;
-        }
+        padding-right: 15px;
+        text-decoration: none;
+        font-size: 24px;
     }
+
 
 }
 
 /* footer */
 
-footer{
+footer {
     background-color: #353535;
     padding: 20px 0;
 
-    .logo-footer{
+    .logo-footer {
         color: #ffffff;
         font-family: "shrikhand";
         font-weight: bold;
@@ -221,19 +235,19 @@ footer{
 
     }
 
-    .list-footer{
-        margin:0;
-        padding:0;
+    .list-footer {
+        margin: 0;
+        padding: 0;
         display: flex;
         gap: 6%;
 
-        i{
-            margin-right:10px;
+        i {
+            margin-right: 10px;
         }
 
-        li{
+        li {
             list-style: none;
-            color:#ffffff;
+            color: #ffffff;
             font-size: 18px;
             margin-bottom: 10px;
         }
@@ -241,6 +255,8 @@ footer{
 }
 
 /* Mise en page des menus */
+
+
 
 .background {
     @include imgBackground;
@@ -264,6 +280,154 @@ footer{
 }
 
 
+.bloc {
+    padding: 0 20px;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 30px 30px 0 0;
+    background-color: #F6F6F6;
+    box-sizing: border-box;
+
+
+
+    .menu-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: 'Shrikhand';
+    }
+
+    .menu{
+        display: flex;
+        gap:2%;
+        flex-wrap: wrap;
+
+    }
+    .box{
+
+        width:32%;
+
+        h3 {
+            position: relative;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+
+            &::after {
+                content: '';
+                width: 50px;
+                height: 4px;
+                background:$couleur-tertiare;
+                position: absolute;
+                z-index: 20;
+                left: 0px;
+                bottom: -8px;
+            }
+        }
+    }
+
+    .item{
+        margin-bottom:20px;
+        width:100%;
+    }
+
+    .anim-price {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        border-radius: 15px;
+        background-color: white ;
+        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
+
+        .valid-box {
+            display: none;
+            position: absolute;
+            background: $couleur-tertiare;
+            border-radius: 0 15px 15px 0;
+            right: 0px;
+            padding: 0 13px;
+            height: 100%;
+            i {
+                font-size: 30px;
+                color: white;
+                transform: rotate(180deg);
+                animation: rotate 0.5s both;
+            }
+        }
+       
+        &:hover .valid-box{
+            @include flexCenter;
+            animation: slide-left 0.5s ease ;
+            transform-origin: right;
+        }
+        &:hover .price {
+            padding-right: 50px;
+            transition: 0.5s ease ;
+        }
+    }
+
+
+
+    .description {
+        margin-left: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+
+        h4,
+        p {
+            margin: 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+    }
+
+    .price p{
+        padding-right:20px;
+        font-weight:bold;
+    }
+
+
+}
+
+
+
+
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes slide-left {
+    0% {
+              transform: scaleX(0);
+    }
+    100% {
+              transform: scaleX(-50px);
+    }
+  }
+
+  @keyframes opacity {
+    0% {
+              opacity: 0;
+    }
+    100% {
+              opacity: 1;
+    }
+  }
 
 /* media queries */
 
