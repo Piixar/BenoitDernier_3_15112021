@@ -348,12 +348,12 @@ header {
         // Effet avant hover et à la sortie du hover (remplissage et vidage)
         &:after {
             background-image: $gradient;
-            transform: scaleY(0);
+            transform: scaleY(0); 
         }
 
         // Effet de remplissage
         &:hover:after {
-            transform: scaleY(1);
+            transform: scaleY(1); 
         }
 
         // &:before {

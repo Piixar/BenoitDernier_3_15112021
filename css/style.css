@@ -37,7 +37,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-  animation: loader 3s linear;
+  animation: loader 5s linear;
   visibility: hidden;
 }
 #loader .loader-container .loader {
@@ -228,6 +228,7 @@ header .geo i {
   display: flex;
   justify-content: space-between;
   padding-left: 15px;
+  align-items: center;
 }
 .gal-flex .description h4 {
   margin-bottom: 10px;
@@ -236,26 +237,32 @@ header .geo i {
   margin-top: 5px;
 }
 .gal-flex .heart {
-  display: flex;
-  align-items: center;
-  padding-right: 15px;
-  text-decoration: none;
-  font-size: 24px;
+  background: url("https://i.ibb.co/Ws6DDnX/w9rjvsda.png") no-repeat center;
+  background-size: cover;
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  border: 1px solid white;
+  margin-right: 20px;
 }
-.gal-flex .heart .fas {
-  opacity: 0;
+.gal-flex .heart:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform-origin: bottom;
+  transition: transform 0.5s;
 }
-.gal-flex .heart .far {
-  opacity: 1;
+.gal-flex .heart:after {
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  transform: scaleY(0);
 }
-.gal-flex .heart:hover .fas {
-  opacity: 1;
-  transform-origin: bottom center;
-  color: #9356DC;
-  transition: color 500ms ease-in;
-}
-.gal-flex .heart:hover .far {
-  opacity: 0;
+.gal-flex .heart:hover:after {
+  transform: scaleY(1);
 }
 
 footer {
