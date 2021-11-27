@@ -311,6 +311,7 @@ header {
         display: flex;
         justify-content: space-between;
         padding-left: 15px;
+        align-items: center;
 
         h4 {
             margin-bottom: 10px;
@@ -322,35 +323,47 @@ header {
     }
 
     .heart {
-        display: flex;
-        align-items: center;
-        padding-right: 15px;
-        text-decoration: none;
-        font-size: 24px;
+        background: url("https://i.ibb.co/Ws6DDnX/w9rjvsda.png") no-repeat center;
+        background-size: cover;
+        display: block;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        border: 1px solid white;
+        margin-right: 20px;
 
-        .fas {
-            opacity: 0;
+        // &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            transform-origin: bottom;
+            transition: transform 0.5s;
         }
 
-        .far {
-            opacity: 1;
+        // Effet avant hover et à la sortie du hover (remplissage et vidage)
+        &:after {
+            background-image: $gradient;
+            transform: scaleY(0);
         }
 
-        &:hover {
-
-            .fas {
-                opacity: 1;
-                transform-origin: bottom center;
-                color: $couleur-primaire;
-                transition: color 500ms ease-in;
-            }
-
-            .far {
-                opacity: 0;
-            }
-
-
+        // Effet de remplissage
+        &:hover:after {
+            transform: scaleY(1);
         }
+
+        // &:before {
+        //     background: white;
+        //     transform-origin: top;
+        // }
+
+        // &:hover:before {
+        //     transform: scaleY(0);
+        // }
     }
 
 }
