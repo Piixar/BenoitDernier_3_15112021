@@ -73,10 +73,10 @@ $img-menu4:url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
 
 
 // Loader
-#loader{
+#loader {
 
     position: absolute;
-    background-color:#000;
+    background-color: #000;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -86,7 +86,7 @@ $img-menu4:url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
     animation: loader 5s linear;
     visibility: hidden;
 
-    
+
 
     .loader-container {
         .loader {
@@ -98,7 +98,7 @@ $img-menu4:url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
             border: 5px solid transparent;
             border-top-color: $couleur-primaire;
             animation: rotate 2s linear infinite;
-    
+
             &:before,
             &:after {
                 content: "";
@@ -106,7 +106,7 @@ $img-menu4:url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
                 border-radius: 50%;
                 border: 5px solid transparent;
             }
-    
+
             &:before {
                 top: 10px;
                 left: 10px;
@@ -115,7 +115,7 @@ $img-menu4:url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
                 border-top-color: $couleur-secondaire;
                 animation: rotate 3s linear infinite;
             }
-    
+
             &:after {
                 top: 25px;
                 left: 25px;
@@ -176,7 +176,7 @@ header {
 
 // Présentation
 
-.title{
+.title {
     text-align: center;
 }
 
@@ -267,22 +267,22 @@ header {
         box-shadow: 2px 3px 8px #d0d0d0;
         border-radius: 10px;
 
-            &:hover{
-                box-shadow: 0px 0px 10px 2px rgba(147, 86, 220, 60%);
-            }
+        &:hover {
+            box-shadow: 0px 0px 10px 2px rgba(147, 86, 220, 60%);
+        }
 
-            .new{
-                position: absolute;
-                background: #99E2D0;
-                right: 20px;
-                top: 20px;
+        .new {
+            position: absolute;
+            background: #99E2D0;
+            right: 20px;
+            top: 20px;
 
-                p{
-                    color: #058A6A;
-                    margin:0;
-                    padding: 10px 20px;
-                }
+            p {
+                color: #058A6A;
+                margin: 0;
+                padding: 10px 20px;
             }
+        }
     }
 
     .image {
@@ -386,10 +386,10 @@ footer {
             margin-bottom: 10px;
         }
 
-        a{
+        a {
             color: #ffffff;
 
-            &:hover{
+            &:hover {
                 text-decoration: underline;
             }
         }
@@ -398,14 +398,15 @@ footer {
 
 // Mise en page des menus 
 
-.top{
+.top {
     display: flex;
 
-    .return{
+    .return {
         @include flexCenter;
         font-size: 20px;
     }
-    .logo{
+
+    .logo {
         width: 100%
     }
 }
@@ -439,7 +440,7 @@ footer {
     border-radius: 30px 30px 0 0;
     background-color: #F6F6F6;
     box-sizing: border-box;
-    margin-top:-60px;
+    margin-top: -60px;
 
     .menu-title {
         display: flex;
@@ -565,6 +566,7 @@ footer {
         visibility: visible;
         opacity: 0.8;
     }
+
     100% {
         opacity: 0;
         visibility: hidden;
