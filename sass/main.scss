@@ -71,6 +71,50 @@ $img-menu4:url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
     cursor: pointer;
 }
 
+@mixin heart {
+    background: url("https://i.ibb.co/Ws6DDnX/w9rjvsda.png") no-repeat center;
+    background-size: cover;
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    border: 1px solid white;
+    margin-right: 20px;
+
+    // &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        transform-origin: bottom;
+        transition: transform 0.5s;
+    }
+
+    // Effet avant hover et à la sortie du hover (remplissage et vidage)
+    &:after {
+        background-image: $gradient;
+        transform: scaleY(0); 
+    }
+
+    // Effet de remplissage
+    &:hover:after {
+        transform: scaleY(1); 
+    }
+
+    // &:before {
+    //     background: white;
+    //     transform-origin: top;
+    // }
+
+    // &:hover:before {
+    //     transform: scaleY(0);
+    // }
+}
+
 
 // Loader
 #loader {
@@ -322,49 +366,6 @@ header {
         }
     }
 
-    .heart {
-        background: url("https://i.ibb.co/Ws6DDnX/w9rjvsda.png") no-repeat center;
-        background-size: cover;
-        display: block;
-        height: 30px;
-        width: 30px;
-        position: relative;
-        border: 1px solid white;
-        margin-right: 20px;
-
-        // &:before,
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-            transform-origin: bottom;
-            transition: transform 0.5s;
-        }
-
-        // Effet avant hover et à la sortie du hover (remplissage et vidage)
-        &:after {
-            background-image: $gradient;
-            transform: scaleY(0); 
-        }
-
-        // Effet de remplissage
-        &:hover:after {
-            transform: scaleY(1); 
-        }
-
-        // &:before {
-        //     background: white;
-        //     transform-origin: top;
-        // }
-
-        // &:hover:before {
-        //     transform: scaleY(0);
-        // }
-    }
 
 }
 
@@ -449,7 +450,6 @@ footer {
 #menu {
     padding: 0 20px;
     width: 100%;
-    max-width: 1200px;
     border-radius: 30px 30px 0 0;
     background-color: #F6F6F6;
     box-sizing: border-box;
@@ -502,7 +502,6 @@ footer {
             opacity: 0;
             animation: opacity 2s;
             animation-fill-mode: forwards;
-            animation-delay: 1000ms;
         }
 
         // Animation prix + icone dans .box
