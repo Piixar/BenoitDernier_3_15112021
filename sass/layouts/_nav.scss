@@ -1,0 +1,49 @@
+.nav-main {
+
+    .nav {
+        display: flex;
+        list-style: none;
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            margin-right: 80px;
+            box-shadow: 2px 3px 8px #d0d0d0;
+            border-radius: 20px;
+            position: relative;
+            background: #f2f2f2;
+            width: 100%;
+
+            &:hover {
+                background-color: rgba(147, 86, 220, 20%);
+                cursor: pointer;
+
+                i {
+                    color: $couleur-primaire;
+                }
+            }
+
+            span {
+                margin-right: 10px;
+                padding: 5px 10px;
+                border-radius: 50%;
+                background-color: $couleur-primaire;
+                color: #ffffff;
+                position: absolute;
+                left: -10px;
+
+            }
+
+            i {
+                margin: 0 10px 0 45px;
+                color: #7f7f7f;
+
+            }
+
+            p {
+                font-weight: bold;
+            }
+
+        }
+    }
+}

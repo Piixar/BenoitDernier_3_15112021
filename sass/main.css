@@ -1,38 +1,23 @@
-/* Font Family */
-@font-face {
-  font-family: 'shrikhand';
-  src: url("../fonts/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: 'roboto';
-  src: url("../fonts/Roboto/Roboto-Thin.ttf");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'roboto';
-  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", helvetica, sans-serif;
+  font-size: 15px;
   font-weight: 400;
+  color: #000;
 }
 
-@font-face {
-  font-family: 'roboto';
-  src: url("../fonts/Roboto/Roboto-Italic.ttf");
-  font-weight: 400;
-  font-style: italic;
+.container {
+  padding: 0 15px;
 }
 
-@font-face {
-  font-family: 'roboto';
-  src: url("../fonts/Roboto/Roboto-Bold.ttf");
-  font-weight: bold;
+a {
+  color: #000;
+  text-decoration: none;
 }
 
-/* variables couleurs */
-/* variables images */
-/* Mixins */
 #loader {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,24 +77,6 @@
           animation: rotate 1.5s linear infinite;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "roboto", helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #000;
-}
-
-.container {
-  padding: 0 15px;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
-}
-
 header .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -145,10 +112,6 @@ header .geo {
 
 header .geo i {
   margin-right: 10px;
-}
-
-.title {
-  text-align: center;
 }
 
 .btn {
@@ -232,6 +195,10 @@ header .geo i {
 
 .nav-main .nav .nav-content p {
   font-weight: bold;
+}
+
+.title {
+  text-align: center;
 }
 
 .gal-flex {
@@ -330,6 +297,7 @@ header .geo i {
   position: relative;
   border: 1px solid white;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .gal-flex .heart:after {
@@ -477,6 +445,7 @@ footer .list-footer a:hover {
   position: relative;
   border: 1px solid white;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 #menu .heart:after {

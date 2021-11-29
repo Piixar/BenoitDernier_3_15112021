@@ -1,0 +1,13 @@
+.btn {
+
+    @include flexCenter;
+
+
+    p {
+        @include btn;
+
+        &:hover {
+            @include btnHover;
+        }
+    }
+}

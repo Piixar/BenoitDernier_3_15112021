@@ -1,0 +1,81 @@
+.title {
+    text-align: center;
+}
+
+.gal-flex {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .item {
+        position: relative;
+        width: 24%;
+        border-radius: 10px;
+        margin-bottom: 40px;
+    }
+
+    .box {
+        box-shadow: 2px 3px 8px #d0d0d0;
+        border-radius: 10px;
+
+        &:hover {
+            box-shadow: 0px 0px 10px 2px rgba(147, 86, 220, 60%);
+        }
+
+        .new {
+            position: absolute;
+            background: #99E2D0;
+            right: 20px;
+            top: 20px;
+
+            p {
+                color: #058A6A;
+                margin: 0;
+                padding: 10px 20px;
+            }
+        }
+    }
+
+    .image {
+        @include imgBackground;
+        height: 276px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .menu1 {
+        background-image: $img-menu1;
+    }
+
+    .menu2 {
+        background-image: $img-menu2;
+    }
+
+    .menu3 {
+        background-image: $img-menu3;
+    }
+
+    .menu4 {
+        background-image: $img-menu4;
+    }
+
+    .description {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 15px;
+        align-items: center;
+
+        h4 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+    }
+
+    .heart{
+        @include heart;
+    }
+
+}

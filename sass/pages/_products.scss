@@ -1,0 +1,163 @@
+.top {
+    display: flex;
+
+    .return {
+        @include flexCenter;
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 100%
+    }
+}
+
+.background {
+    @include imgBackground;
+    height: 350px;
+}
+
+.menu1 {
+    background-image: $img-menu1;
+}
+
+.menu2 {
+    background-image: $img-menu2;
+}
+
+.menu3 {
+    background-image: $img-menu3;
+}
+
+.menu4 {
+    background-image: $img-menu4;
+}
+
+
+#menu {
+    padding: 0 20px;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    background-color: #F6F6F6;
+    box-sizing: border-box;
+    margin-top: -60px;
+
+    .menu-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: 'Shrikhand';
+    }
+
+    .heart{
+        @include heart;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+
+        @for $i from 1 through 10 {
+            .item:nth-child(#{$i}) {
+                animation-delay: $i * 500ms;
+            }
+        }
+
+    }
+
+    // .box div description plats
+    .box {
+
+        width: 32%;
+
+        h3 {
+            position: relative;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+
+            &::after {
+                content: '';
+                width: 50px;
+                height: 4px;
+                background: $couleur-tertiare;
+                position: absolute;
+                left: 0px;
+                bottom: -8px;
+            }
+        }
+
+        .item {
+            margin-bottom: 20px;
+            width: 100%;
+            opacity: 0;
+            animation: opacity 2s;
+            animation-fill-mode: forwards;
+        }
+
+        // Animation prix + icone dans .box
+        .anim-price {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+
+            .valid-box {
+                display: none;
+                position: absolute; 
+                background: $couleur-tertiare;
+                border-radius: 0 15px 15px 0;
+                right: 0px;
+                padding: 0 13px;
+                height: 100%;
+
+                i {
+                    font-size: 30px;
+                    color: white;
+                    transform: rotate(180deg);
+                    animation: rotate 0.5s both;
+                }
+            }
+
+            &:hover .valid-box {
+                @include flexCenter;
+                animation: slide-left 0.5s ease;
+                transform-origin: right;
+            }
+
+            &:hover .price {
+                padding-right: 50px;
+                transition: 0.5s ease;
+            }
+        }
+
+        // Texte dans .box
+        .description {
+            margin-left: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+
+            h4,
+            p {
+                margin: 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+        }
+
+        .price p {
+            padding-right: 20px;
+            font-weight: bold;
+        }
+    }
+
+    // Fin .box
+
+}

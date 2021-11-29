@@ -1,0 +1,25 @@
+header {
+
+    .logo {
+        @include flexCenter;
+        font-family: "shrikhand";
+        font-weight: bold;
+        font-size: 24px;
+        border-bottom: solid 2px #f2f2f2;
+
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    .geo {
+        @include flexCenter;
+        padding: 10px 0;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+}
