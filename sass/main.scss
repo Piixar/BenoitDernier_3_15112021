@@ -462,6 +462,10 @@ footer {
         font-family: 'Shrikhand';
     }
 
+    .heart{
+        @include heart;
+    }
+
     .menu {
         display: flex;
         justify-content: space-between;
