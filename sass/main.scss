@@ -71,17 +71,58 @@ $img-menu4:url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
     cursor: pointer;
 }
 
+@mixin heart {
+    background: url("/images/coeur.png") no-repeat center;
+    background-size: cover;
+    display: block;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    border: 1px solid white;
+    margin-right: 20px;
+
+    // &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        transform-origin: bottom;
+        transition: transform 0.5s;
+    }
+
+    // Effet avant hover et à la sortie du hover (remplissage et vidage)
+    &:after {
+        background-image: $gradient;
+        transform: scaleY(0); 
+    }
+
+    // Effet de remplissage
+    &:hover:after {
+        transform: scaleY(1); 
+    }
+
+    // &:before {
+    //     background: white;
+    //     transform-origin: top;
+    // }
+
+    // &:hover:before {
+    //     transform: scaleY(0);
+    // }
+}
+
 
 // Loader
 #loader {
-
+    @include flexCenter;
     position: absolute;
     background-color: #000;
     height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 1;
     animation: loader 5s linear;
     visibility: hidden;
@@ -322,48 +363,8 @@ header {
         }
     }
 
-    .heart {
-        background: url("https://i.ibb.co/Ws6DDnX/w9rjvsda.png") no-repeat center;
-        background-size: cover;
-        display: block;
-        height: 30px;
-        width: 30px;
-        position: relative;
-        border: 1px solid white;
-        margin-right: 20px;
-
-        // &:before,
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-            transform-origin: bottom;
-            transition: transform 0.5s;
-        }
-
-        // Effet avant hover et à la sortie du hover (remplissage et vidage)
-        &:after {
-            background-image: $gradient;
-            transform: scaleY(0); 
-        }
-
-        // Effet de remplissage
-        &:hover:after {
-            transform: scaleY(1); 
-        }
-
-        // &:before {
-        //     background: white;
-        //     transform-origin: top;
-        // }
-
-        // &:hover:before {
-        //     transform: scaleY(0);
-        // }
+    .heart{
+        @include heart;
     }
 
 }
@@ -460,6 +461,10 @@ footer {
         align-items: center;
         justify-content: space-between;
         font-family: 'Shrikhand';
+    }
+
+    .heart{
+        @include heart;
     }
 
     .menu {
