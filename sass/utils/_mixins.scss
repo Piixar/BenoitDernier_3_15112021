@@ -27,7 +27,7 @@
 }
 
 @mixin heart {
-    background: url("/images/coeur.png") no-repeat center;
+    background: url("../images/coeur.png") no-repeat center;
     background-size: cover;
     display: block;
     height: 30px;
