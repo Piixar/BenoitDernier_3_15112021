@@ -1,14 +1,18 @@
-@media (min-width: 1200px) {
+// @media (min-width: 1200px) {
 
-    .container,
-    header {
-        width: 1200px;
-        margin: 0 auto;
-    }
-}
+//     .container,
+//     header {
+//         width: 1200px;
+//         margin: 0 auto;
+//     }
+// }
 
 @media (max-width: 992px){
     
+    .container{
+        padding:0 15px;
+    }
+
     .return{
         margin-left: 15px;
     }
@@ -64,6 +68,10 @@
 
             i.fas.fa-utensils{
                 padding-right: 10px;
+            }
+            i.fas.fa-hands-helping{
+                font-size: 14px;
+                padding-right: 6px;
             }
             
         }
