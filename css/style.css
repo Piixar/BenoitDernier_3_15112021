@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap");
 body {
   margin: 0;
   padding: 0;
@@ -10,7 +9,7 @@ body {
 }
 
 .container {
-  padding: 0 15px;
+  padding: 0 30px;
 }
 
 a {
@@ -70,7 +69,7 @@ header .logo {
   font-family: "shrikhand";
   font-weight: bold;
   font-size: 24px;
-  border-bottom: solid 2px #f2f2f2;
+  box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.25);
 }
 header .logo h1 {
   margin: 0;
@@ -80,6 +79,7 @@ header .geo {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
+  background-color: #f2f2f2;
 }
 header .geo i {
   margin-right: 10px;
@@ -278,6 +278,7 @@ footer .list-footer a:hover {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  margin-left: 15px;
 }
 .top .logo {
   width: 100%;
@@ -306,12 +307,12 @@ footer .list-footer a:hover {
 }
 
 #menu {
-  padding: 0 20px;
-  width: 100%;
+  padding: 0 15px;
+  width: 90%;
   border-radius: 30px 30px 0 0;
   background-color: #F6F6F6;
   box-sizing: border-box;
-  margin-top: -60px;
+  margin: -60px auto 0;
 }
 #menu .menu-title {
   display: flex;
@@ -391,7 +392,7 @@ footer .list-footer a:hover {
   text-transform: uppercase;
   margin-bottom: 40px;
 }
-#menu .box h3::after {
+#menu .box h3:after {
   content: "";
   width: 50px;
   height: 4px;
@@ -501,11 +502,61 @@ footer .list-footer a:hover {
     opacity: 1;
   }
 }
-@media (min-width: 1200px) {
-  .container,
-header {
-    width: 1200px;
-    margin: 0 auto;
+@media (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .return {
+    margin-left: 15px;
+  }
+
+  .btn p {
+    width: 30%;
+  }
+
+  .nav-main .nav {
+    display: block;
+  }
+  .nav-main .nav .nav-content {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .gal-flex {
+    flex-direction: column;
+  }
+  .gal-flex .item {
+    width: 100%;
+  }
+  .gal-flex .image {
+    height: 200px;
+  }
+
+  #menu {
+    width: 100%;
+  }
+  #menu .menu {
+    flex-direction: column;
+  }
+  #menu .menu .box {
+    width: 100%;
+  }
+
+  footer .list-footer {
+    flex-direction: column;
+  }
+  footer .list-footer i.fas.fa-utensils {
+    padding-right: 10px;
+  }
+  footer .list-footer i.fas.fa-hands-helping {
+    font-size: 14px;
+    padding-right: 6px;
+  }
+}
+@media (max-width: 620px) {
+  .btn p {
+    width: 55%;
   }
 }
 
