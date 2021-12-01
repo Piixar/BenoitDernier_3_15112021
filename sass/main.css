@@ -288,8 +288,8 @@ header .geo i {
   margin-top: 5px;
 }
 
-.gal-flex .heart {
-  background: url("/images/coeur.png") no-repeat center;
+.gal-flex .heart .heart {
+  background: url("../images/coeur.png") no-repeat center;
   background-size: cover;
   display: block;
   height: 30px;
@@ -300,7 +300,7 @@ header .geo i {
   cursor: pointer;
 }
 
-.gal-flex .heart:after {
+.gal-flex .heart .heart:after {
   content: "";
   position: absolute;
   top: 0;
@@ -316,14 +316,14 @@ header .geo i {
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
-.gal-flex .heart:after {
+.gal-flex .heart .heart:after {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background-image: linear-gradient(#FF79DA, #9356DC);
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
 }
 
-.gal-flex .heart:hover:after {
+.gal-flex .heart .heart:hover:after {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
 }
@@ -436,8 +436,8 @@ footer .list-footer a:hover {
   font-family: 'Shrikhand';
 }
 
-#menu .heart {
-  background: url("/images/coeur.png") no-repeat center;
+#menu .heart .heart {
+  background: url("../images/coeur.png") no-repeat center;
   background-size: cover;
   display: block;
   height: 30px;
@@ -448,7 +448,7 @@ footer .list-footer a:hover {
   cursor: pointer;
 }
 
-#menu .heart:after {
+#menu .heart .heart:after {
   content: "";
   position: absolute;
   top: 0;
@@ -464,14 +464,14 @@ footer .list-footer a:hover {
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
-#menu .heart:after {
+#menu .heart .heart:after {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background-image: linear-gradient(#FF79DA, #9356DC);
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
 }
 
-#menu .heart:hover:after {
+#menu .heart .heart:hover:after {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
 }
