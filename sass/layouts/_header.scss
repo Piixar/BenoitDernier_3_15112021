@@ -5,7 +5,7 @@ header {
         font-family: "shrikhand";
         font-weight: bold;
         font-size: 24px;
-        border-bottom: solid 2px #f2f2f2;
+        box-shadow: 0 0 0.5px rgba(0,0,0,.25);
 
 
         h1 {
@@ -16,6 +16,7 @@ header {
     .geo {
         @include flexCenter;
         padding: 10px 0;
+        background-color: #f2f2f2;
 
         i {
             margin-right: 10px;
