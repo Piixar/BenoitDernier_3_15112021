@@ -9,3 +9,7 @@
     background-position: center;
 }
 
+@mixin position{
+    position:relative;
+    z-index: 0;
+}

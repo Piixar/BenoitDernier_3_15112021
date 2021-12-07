@@ -215,7 +215,6 @@ header .geo i {
   height: 30px;
   width: 30px;
   position: relative;
-  border: 1px solid white;
   margin-right: 20px;
   cursor: pointer;
 }
@@ -290,18 +289,26 @@ footer .list-footer a:hover {
 
 .menu1 {
   background-image: url("../images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  position: relative;
+  z-index: 0;
 }
 
 .menu2 {
   background-image: url("../images/stil-u2Lp8tXIcjw-unsplash.jpg");
+  position: relative;
+  z-index: 0;
 }
 
 .menu3 {
   background-image: url("../images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  position: relative;
+  z-index: 0;
 }
 
 .menu4 {
   background-image: url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  position: relative;
+  z-index: 0;
 }
 
 #menu {
@@ -311,6 +318,8 @@ footer .list-footer a:hover {
   background-color: #F6F6F6;
   box-sizing: border-box;
   margin: -60px auto 0;
+  position: relative;
+  z-index: 0;
 }
 #menu .menu-title {
   display: flex;
@@ -319,13 +328,12 @@ footer .list-footer a:hover {
   font-family: "Shrikhand";
 }
 #menu .heart {
-  background: url("../images/coeur.png") no-repeat center;
+  background: url("../images/coeur_gris.png") no-repeat center;
   background-size: cover;
   display: block;
   height: 30px;
   width: 30px;
   position: relative;
-  border: 1px solid white;
   margin-right: 20px;
   cursor: pointer;
 }
