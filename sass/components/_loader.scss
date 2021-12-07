@@ -10,7 +10,7 @@
 
 
 
-    .loader-container {
+    .loader-container { 
         .loader {
             display: block;
             position: relative;
@@ -21,7 +21,7 @@
             border-top-color: $couleur-primaire;
             animation: rotate 2s linear infinite;
 
-            &:before,
+            &::before,
             &:after {
                 content: "";
                 position: absolute;
