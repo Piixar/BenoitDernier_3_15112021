@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 a {
@@ -219,7 +219,7 @@ header .geo i {
   margin-right: 20px;
   cursor: pointer;
 }
-.gal-flex .heart:after {
+.gal-flex .heart::after {
   content: "";
   position: absolute;
   top: 0;
@@ -229,12 +229,10 @@ header .geo i {
   z-index: -1;
   transform-origin: bottom;
   transition: transform 0.5s;
-}
-.gal-flex .heart:after {
   background-image: linear-gradient(#FF79DA, #9356DC);
   transform: scaleY(0);
 }
-.gal-flex .heart:hover:after {
+.gal-flex .heart:hover::after {
   transform: scaleY(1);
 }
 
@@ -331,7 +329,7 @@ footer .list-footer a:hover {
   margin-right: 20px;
   cursor: pointer;
 }
-#menu .heart:after {
+#menu .heart::after {
   content: "";
   position: absolute;
   top: 0;
@@ -341,12 +339,10 @@ footer .list-footer a:hover {
   z-index: -1;
   transform-origin: bottom;
   transition: transform 0.5s;
-}
-#menu .heart:after {
   background-image: linear-gradient(#FF79DA, #9356DC);
   transform: scaleY(0);
 }
-#menu .heart:hover:after {
+#menu .heart:hover::after {
   transform: scaleY(1);
 }
 #menu .menu {
