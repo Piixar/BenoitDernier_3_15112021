@@ -17,25 +17,26 @@
     height: 350px;
 }
 
-.menu1 {
+.background.menu1 {
     background-image: $img-menu1;
     @include position;
 }
 
-.menu2 {
+.background.menu2 {
     background-image: $img-menu2;
     @include position;
 }
 
-.menu3 {
+.background.menu3 {
     background-image: $img-menu3;
     @include position;
 }
 
-.menu4 {
+.background.menu4 {
     background-image: $img-menu4;
     @include position;
 }
+
 
 
 #menu {
