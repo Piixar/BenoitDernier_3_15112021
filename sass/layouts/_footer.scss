@@ -1,0 +1,38 @@
+footer {
+    background-color: #353535;
+    padding: 20px 0;
+
+    .logo-footer {
+        color: #ffffff;
+        font-family: "shrikhand";
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 15px;
+
+    }
+
+    .list-footer {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 6%;
+
+        i {
+            margin-right: 10px;
+        }
+
+        li {
+            list-style: none;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #ffffff;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

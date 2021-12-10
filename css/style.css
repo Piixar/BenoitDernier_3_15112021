@@ -1,41 +1,35 @@
-/* Font Family */
-@font-face {
-  font-family: "shrikhand";
-  src: url("../fonts/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "roboto";
-  src: url("../fonts/Roboto/Roboto-Thin.ttf");
-  font-weight: 100;
-}
-@font-face {
-  font-family: "roboto";
-  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&family=Shrikhand&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto", helvetica, sans-serif;
+  font-size: 15px;
   font-weight: 400;
+  color: #000;
 }
-@font-face {
-  font-family: "roboto";
-  src: url("../fonts/Roboto/Roboto-Italic.ttf");
-  font-weight: 400;
-  font-style: italic;
+
+.container {
+  padding: 0 20px;
 }
-@font-face {
-  font-family: "roboto";
-  src: url("../fonts/Roboto/Roboto-Bold.ttf");
-  font-weight: bold;
+
+a {
+  color: #000;
+  text-decoration: none;
 }
-/* variables couleurs */
-/* variables images */
-/* Mixins */
-.loader-container {
-  animation: opacity 5s;
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  background-color: #000;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  animation: loader 5s linear;
+  visibility: hidden;
 }
-.loader-container .loader {
+#loader .loader-container .loader {
   display: block;
   position: relative;
   width: 150px;
@@ -45,13 +39,13 @@
   border-top-color: #9356DC;
   animation: rotate 2s linear infinite;
 }
-.loader-container .loader:before, .loader-container .loader:after {
+#loader .loader-container .loader::before, #loader .loader-container .loader:after {
   content: "";
   position: absolute;
   border-radius: 50%;
   border: 5px solid transparent;
 }
-.loader-container .loader:before {
+#loader .loader-container .loader:before {
   top: 10px;
   left: 10px;
   right: 10px;
@@ -59,32 +53,13 @@
   border-top-color: #FF79DA;
   animation: rotate 3s linear infinite;
 }
-.loader-container .loader:after {
+#loader .loader-container .loader:after {
   top: 25px;
   left: 25px;
   right: 25px;
   bottom: 25px;
   border-top-color: #99E2D0;
   animation: rotate 1.5s linear infinite;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "roboto", helvetica, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: #000;
-  background-color: red;
-}
-
-.container {
-  padding: 0 15px;
-}
-
-a {
-  color: #000;
-  text-decoration: none;
 }
 
 header .logo {
@@ -94,7 +69,7 @@ header .logo {
   font-family: "shrikhand";
   font-weight: bold;
   font-size: 24px;
-  border-bottom: solid 2px #f2f2f2;
+  box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.25);
 }
 header .logo h1 {
   margin: 0;
@@ -104,6 +79,7 @@ header .geo {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
+  background-color: #f2f2f2;
 }
 header .geo i {
   margin-right: 10px;
@@ -168,6 +144,10 @@ header .geo i {
   font-weight: bold;
 }
 
+.title {
+  text-align: center;
+}
+
 .gal-flex {
   width: 100%;
   display: flex;
@@ -175,6 +155,7 @@ header .geo i {
   justify-content: space-between;
 }
 .gal-flex .item {
+  position: relative;
   width: 24%;
   border-radius: 10px;
   margin-bottom: 40px;
@@ -185,6 +166,17 @@ header .geo i {
 }
 .gal-flex .box:hover {
   box-shadow: 0px 0px 10px 2px rgba(147, 86, 220, 0.6);
+}
+.gal-flex .box .new {
+  position: absolute;
+  background: #99E2D0;
+  right: 20px;
+  top: 20px;
+}
+.gal-flex .box .new p {
+  color: #058A6A;
+  margin: 0;
+  padding: 10px 20px;
 }
 .gal-flex .image {
   background-size: cover;
@@ -208,6 +200,7 @@ header .geo i {
   display: flex;
   justify-content: space-between;
   padding-left: 15px;
+  align-items: center;
 }
 .gal-flex .description h4 {
   margin-bottom: 10px;
@@ -216,26 +209,30 @@ header .geo i {
   margin-top: 5px;
 }
 .gal-flex .heart {
-  display: flex;
-  align-items: center;
-  padding-right: 15px;
-  text-decoration: none;
-  font-size: 24px;
+  background: url("../images/coeur.png") no-repeat center;
+  background-size: cover;
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  margin-right: 20px;
+  cursor: pointer;
 }
-.gal-flex .heart .fas {
-  opacity: 0;
+.gal-flex .heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform-origin: bottom;
+  transition: transform 0.5s;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  transform: scaleY(0);
 }
-.gal-flex .heart .far {
-  opacity: 1;
-}
-.gal-flex .heart:hover .fas {
-  opacity: 1;
-  transform-origin: bottom center;
-  color: #9356DC;
-  transition: color 500ms ease-in;
-}
-.gal-flex .heart:hover .far {
-  opacity: 0;
+.gal-flex .heart:hover::after {
+  transform: scaleY(1);
 }
 
 footer {
@@ -278,6 +275,7 @@ footer .list-footer a:hover {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  margin-left: 15px;
 }
 .top .logo {
   width: 100%;
@@ -289,35 +287,71 @@ footer .list-footer a:hover {
   height: 350px;
 }
 
-.menu1 {
+.background.menu1 {
   background-image: url("../images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  position: relative;
+  z-index: 0;
 }
 
-.menu2 {
+.background.menu2 {
   background-image: url("../images/stil-u2Lp8tXIcjw-unsplash.jpg");
+  position: relative;
+  z-index: 0;
 }
 
-.menu3 {
+.background.menu3 {
   background-image: url("../images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  position: relative;
+  z-index: 0;
 }
 
-.menu4 {
+.background.menu4 {
   background-image: url("../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  position: relative;
+  z-index: 0;
 }
 
 #menu {
-  padding: 0 20px;
-  width: 100%;
-  max-width: 1200px;
+  padding: 0 15px;
+  width: 90%;
   border-radius: 30px 30px 0 0;
   background-color: #F6F6F6;
   box-sizing: border-box;
+  margin: -60px auto 0;
+  position: relative;
+  z-index: 0;
 }
 #menu .menu-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: "Shrikhand";
+}
+#menu .heart {
+  background: url("../images/coeur_gris.png") no-repeat center;
+  background-size: cover;
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  margin-right: 20px;
+  cursor: pointer;
+}
+#menu .heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform-origin: bottom;
+  transition: transform 0.5s;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  transform: scaleY(0);
+}
+#menu .heart:hover::after {
+  transform: scaleY(1);
 }
 #menu .menu {
   display: flex;
@@ -362,7 +396,7 @@ footer .list-footer a:hover {
   text-transform: uppercase;
   margin-bottom: 40px;
 }
-#menu .box h3::after {
+#menu .box h3:after {
   content: "";
   width: 50px;
   height: 4px;
@@ -377,7 +411,6 @@ footer .list-footer a:hover {
   opacity: 0;
   animation: opacity 2s;
   animation-fill-mode: forwards;
-  animation-delay: 1000ms;
 }
 #menu .box .anim-price {
   position: relative;
@@ -434,6 +467,16 @@ footer .list-footer a:hover {
   font-weight: bold;
 }
 
+@keyframes loader {
+  0% {
+    visibility: visible;
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 @keyframes pulse {
   to {
     box-shadow: 0 0 0 10px rgba(113, 5, 245, 0.01);
@@ -463,11 +506,61 @@ footer .list-footer a:hover {
     opacity: 1;
   }
 }
-@media (min-width: 1200px) {
-  .container,
-header {
-    width: 1200px;
-    margin: 0 auto;
+@media (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .return {
+    margin-left: 15px;
+  }
+
+  .btn p {
+    width: 30%;
+  }
+
+  .nav-main .nav {
+    display: block;
+  }
+  .nav-main .nav .nav-content {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .gal-flex {
+    flex-direction: column;
+  }
+  .gal-flex .item {
+    width: 100%;
+  }
+  .gal-flex .image {
+    height: 200px;
+  }
+
+  #menu {
+    width: 100%;
+  }
+  #menu .menu {
+    flex-direction: column;
+  }
+  #menu .menu .box {
+    width: 100%;
+  }
+
+  footer .list-footer {
+    flex-direction: column;
+  }
+  footer .list-footer i.fas.fa-utensils {
+    padding-right: 10px;
+  }
+  footer .list-footer i.fas.fa-hands-helping {
+    font-size: 14px;
+    padding-right: 6px;
+  }
+}
+@media (max-width: 620px) {
+  .btn p {
+    width: 55%;
   }
 }
 

@@ -1,0 +1,48 @@
+@keyframes loader {
+    0% {
+        visibility: visible;
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 10px rgba(113, 5, 245, 0.01);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes slide-left {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(-50px);
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
