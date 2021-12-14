@@ -144,6 +144,10 @@ header .geo i {
   font-weight: bold;
 }
 
+.geo {
+  background: linear-gradient(#E0E0E0, #D2D2D2, 7.5%);
+}
+
 .title {
   text-align: center;
 }
