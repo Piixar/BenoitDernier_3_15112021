@@ -166,14 +166,14 @@
                 transform-origin: right;
             }
 
-            &:hover .price {
+            &:hover .item-price {
                 padding-right: 50px;
                 transition: 0.5s ease;
             }
         }
 
         // Texte dans .box
-        .description {
+        .item-description {
             margin-left: 20px;
             white-space: nowrap;
             overflow: hidden;
@@ -187,8 +187,8 @@
 
         }
 
-        .price p {
-            padding-right: 20px;
+        .item-price p {
+            padding-right: $padding-l;
             font-weight: bold;
         }
     }

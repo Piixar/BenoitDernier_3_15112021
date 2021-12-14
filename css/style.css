@@ -144,6 +144,10 @@ header .geo i {
   font-weight: bold;
 }
 
+.geo {
+  background: linear-gradient(#E0E0E0, #F2F2F2);
+}
+
 .title {
   text-align: center;
 }
@@ -447,22 +451,22 @@ footer .list-footer a:hover {
   animation: slide-left 0.5s ease;
   transform-origin: right;
 }
-#menu .box .anim-price:hover .price {
+#menu .box .anim-price:hover .item-price {
   padding-right: 50px;
   transition: 0.5s ease;
 }
-#menu .box .description {
+#menu .box .item-description {
   margin-left: 20px;
   white-space: nowrap;
   overflow: hidden;
 }
-#menu .box .description h4,
-#menu .box .description p {
+#menu .box .item-description h4,
+#menu .box .item-description p {
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-#menu .box .price p {
+#menu .box .item-price p {
   padding-right: 20px;
   font-weight: bold;
 }
