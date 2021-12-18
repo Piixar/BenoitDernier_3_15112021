@@ -6,18 +6,20 @@
         margin: 0 auto;
     }
 
+//fleches retour page prduit
     .return {
         margin-left: 15px;
     }
 
 
+//boutons
     .btn {
         p {
             width: 38%;
         }
     }
 
-
+//navigation
     .nav-main {
 
         .nav {
@@ -30,6 +32,7 @@
         }
     }
 
+//galerie accueil
     .gal-flex {
         flex-direction: column;
 
@@ -42,6 +45,7 @@
         }
     }
 
+//mise en forme page produits
     #menu {
         width: 100%;
 
@@ -49,12 +53,14 @@
             flex-direction: column;
 
             .box {
-                width: 100%;
+                width: 70%;
+                margin: 0 auto;
             }
         }
 
     }
 
+//footer
     footer {
         .list-footer {
             flex-direction: column;
@@ -75,6 +81,7 @@
 }
 
 @media (max-width: 620px) {
+//bouton
     .btn {
         p {
             width: 55%;
@@ -83,6 +90,16 @@
 
     .container {
         max-width: none;
+        margin: unset;
+    }
+
+//valid chack page produits
+    .fa-check-circle:before{
+        font-size: 24px;
+    }
+
+    #menu .menu .box{
+        width: 100%;
         margin: unset;
     }
 }

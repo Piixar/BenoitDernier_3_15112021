@@ -39,13 +39,13 @@ a {
   border-top-color: #9356DC;
   animation: rotate 2s linear infinite;
 }
-#loader .loader-container .loader::before, #loader .loader-container .loader:after {
+#loader .loader-container .loader::before, #loader .loader-container .loader::after {
   content: "";
   position: absolute;
   border-radius: 50%;
   border: 5px solid transparent;
 }
-#loader .loader-container .loader:before {
+#loader .loader-container .loader::before {
   top: 10px;
   left: 10px;
   right: 10px;
@@ -53,7 +53,7 @@ a {
   border-top-color: #FF79DA;
   animation: rotate 3s linear infinite;
 }
-#loader .loader-container .loader:after {
+#loader .loader-container .loader::after {
   top: 25px;
   left: 25px;
   right: 25px;
@@ -181,6 +181,7 @@ header .geo i {
   color: #058A6A;
   margin: 0;
   padding: 10px 20px;
+  font-weight: bold;
 }
 .gal-flex .image {
   background-size: cover;
@@ -400,7 +401,7 @@ footer .list-footer a:hover {
   text-transform: uppercase;
   margin-bottom: 40px;
 }
-#menu .box h3:after {
+#menu .box h3::after {
   content: "";
   width: 50px;
   height: 4px;
@@ -550,7 +551,8 @@ footer .list-footer a:hover {
     flex-direction: column;
   }
   #menu .menu .box {
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
   }
 
   footer .list-footer {
@@ -571,6 +573,15 @@ footer .list-footer a:hover {
 
   .container {
     max-width: none;
+    margin: unset;
+  }
+
+  .fa-check-circle:before {
+    font-size: 24px;
+  }
+
+  #menu .menu .box {
+    width: 100%;
     margin: unset;
   }
 }
