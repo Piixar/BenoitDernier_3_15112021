@@ -167,6 +167,7 @@ header .geo i {
 .gal-flex .box {
   box-shadow: 2px 3px 8px #d0d0d0;
   border-radius: 10px;
+  position: relative;
 }
 .gal-flex .box:hover {
   box-shadow: 0px 0px 10px 2px rgba(147, 86, 220, 0.6);
@@ -219,8 +220,9 @@ header .geo i {
   display: block;
   height: 30px;
   width: 30px;
-  position: relative;
-  margin-right: 20px;
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
   cursor: pointer;
 }
 .gal-flex .heart::after {
