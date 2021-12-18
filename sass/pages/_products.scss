@@ -110,7 +110,7 @@
             text-transform: uppercase;
             margin-bottom: 40px;
 
-            &:after {
+            &::after {
                 content: '';
                 width: 50px;
                 height: 4px;

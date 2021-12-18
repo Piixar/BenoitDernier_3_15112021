@@ -33,12 +33,12 @@
             background: #99E2D0;
             right: 20px;
             top: 20px;
-            // z-index: 1;
 
             p {
                 color: #058A6A;
                 margin: 0;
                 padding: 10px 20px;
+                font-weight: bold;
             }
         }
     }
@@ -88,7 +88,7 @@
         height: 30px;
         width: 30px;
         position: relative;
-        margin-right: $margin-l;
+        margin-right: 20px;
         cursor: pointer;
 
         &::after {
