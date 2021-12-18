@@ -22,14 +22,14 @@
             animation: rotate 2s linear infinite;
 
             &::before,
-            &:after {
+            &::after {
                 content: "";
                 position: absolute;
                 border-radius: 50%;
                 border: 5px solid transparent;
             }
 
-            &:before {
+            &::before {
                 top: 10px;
                 left: 10px;
                 right: 10px;
@@ -38,7 +38,7 @@
                 animation: rotate 3s linear infinite;
             }
 
-            &:after {
+            &::after {
                 top: 25px;
                 left: 25px;
                 right: 25px;
